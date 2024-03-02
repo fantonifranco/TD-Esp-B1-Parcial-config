@@ -6,20 +6,16 @@ spring:
     name: gateway-service
   cloud:
     gateway:
-      default-filters:
-        - name: LogFilter
-      routes:
-        - id: movieRoute
-          uri: lb://movie-service
-          predicates:
-            - Path=/api/v1/movies/**
-        - id: catalogRoute
-          uri: lb://catalog-service
-          predicates:
-            - Path=/api/v1/catalog/**
-          filters:
-            - AddRequestHeader=user-request-header, custom-user-request-header
-            - AddResponseHeader=user-respons-header, custom-user-response-header
+      mvc:
+        routes:
+          - id: catalogRoute
+            uri: lb://catalog-service
+            predicates:
+              - Path=/api/v1/catalog/**
+            filters:
+              - AddRequestHeader=user-request-header, custom-user-request-header
+              - AddResponseHeader=user-respons-header, custom-user-response-header
+              
 eureka:
   instance:
     hostname: localhost
