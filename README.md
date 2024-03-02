@@ -8,10 +8,10 @@ Configuraciones realizadas por:
 
 **PRUEBAS REALIZADAS DESDE POSTMAN**
 
-![Obteniendo peliculas desde el servicio movie-service](getMoviesTerror.png)
+![Obteniendo peliculas desde el servicio movie-service](Test/getMoviesTerror.png)
 
-![Cargando nueva pelicula desde el servicio movie-service](saveMovieAccion.png)
+![Cargando nueva pelicula desde el servicio movie-service](Test/saveMovieAccion.png)
 
-![Obteniendo peliculas desde el servicio catalog-service](getCatalogGenre.png)
+![Obteniendo peliculas desde el servicio catalog-service](Test/getCatalogGenre.png)
 
-![Cargando nueva pelicula desde el servicio catalog-service](saveMovieFromCatalog.png)
+![Cargando nueva pelicula desde el servicio catalog-service](Test/saveMovieFromCatalog.png)
