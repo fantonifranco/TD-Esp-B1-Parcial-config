@@ -7,6 +7,10 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: movieRoute
+          uri: lb://movie-service
+          predicates:
+            - Path=/api/v1/catalog/**
         - id: catalogRoute
           uri: lb://catalog-service
           predicates:
