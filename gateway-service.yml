@@ -6,18 +6,14 @@ spring:
     name: gateway-service
   cloud:
     gateway:
-      mvc:
-        routes:
-          - id: catalogRoute
-            uri: lb://catalog-service
-            predicates:
-              - Path=/api/v1/catalog/**
-            filters:
-              - AddRequestHeader=user-request-header, custom-user-request-header
-              - AddResponseHeader=user-respons-header, custom-user-response-header
-  aop:
-    proxy-target-class: false  
-              
+      routes:
+        - id: catalogRoute
+          uri: lb://catalog-service
+          predicates:
+            - Path=/api/v1/catalog/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-respons-header, custom-user-response-header
 eureka:
   instance:
     hostname: localhost
