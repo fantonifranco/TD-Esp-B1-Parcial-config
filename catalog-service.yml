@@ -6,5 +6,17 @@ eureka:
     hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  health:
+    circuitbreakers:
+      enabled: true
+  enpoint:
+    health:
+      show-details: always
+
 idRandom: ${random.value}
 message: Mensaje desde la configuracion por DEFECTO
