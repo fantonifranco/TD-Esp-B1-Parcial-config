@@ -18,5 +18,19 @@ management:
     health:
       show-details: always
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      movie-service:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 15000 # Espera en milisegundos en estado abierto
+        permittedNumberOfCallsInHalfOpenState: 3 # Si el servicio se recupero, espera 3 llamados para pasarlo a cerrado
+        registerHealthIndicator: true
+        allowHealthIndicatorToFail: false
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+
 idRandom: ${random.value}
 message: Mensaje desde la configuracion por DEFECTO
