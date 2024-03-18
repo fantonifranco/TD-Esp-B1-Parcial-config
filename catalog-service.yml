@@ -36,7 +36,8 @@ resilience4j:
         waitDuration: 1000
         maxAttempts: 3 # Cantidad de reintentos
         retryExceptions: # Excepcion contra la que queremos reintentar
-          - feign.FeignException$InternalServerError  
+          - feign.FeignException$InternalServerError 
+          - feign.FeignException$ServiceUnavailable 
 
 
 idRandom: ${random.value}
