@@ -18,3 +18,13 @@ eureka:
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+management:
+  traicing:
+    sampling:
+      probability: 1.0
+  metrics:
+    export:
+      zipkin:
+        enabled: true
+        baseUrl: http://localhost:9411
