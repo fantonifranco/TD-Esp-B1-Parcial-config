@@ -1,16 +1,24 @@
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
 spring:
   rabbitmq:
     username: guest
     password: guest
     host: localhost
     port: 5672
+  mongodb:
+    embedded: 
+      version: 4.0.2
+    data:
+      mongodb:
+        database: test
+        port: 27018
 
 queue:
-  movie:
-    name: lineMovieService
-
-server:
-  port: ${PORT:${SERVER_PORT:0}}
+  message:
+    movie: workingMovie
+    serie: workingSerie
 
 eureka:
   instance:

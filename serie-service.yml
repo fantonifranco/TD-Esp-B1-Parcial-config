@@ -15,8 +15,8 @@ spring:
       port: 27017
 
 queue:
-  movie:
-    name: lineSerieService
+  message:
+    serie: workingSerie
 
 server:
   port: ${PORT:${SERVER_PORT:0}}
